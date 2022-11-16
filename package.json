@@ -1,0 +1,54 @@
+{
+  "name": "nestjs-micro",
+  "version": "1.0.0",
+  "description": "",
+  "author": "t.kosminov",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "graph": "nx graph",
+    "build:api": "lerna exec --scope api -- npm run build",
+    "start:api": "lerna exec --scope api -- npm run start:dev",
+    "start:api:build": "lerna exec --scope api -- npm run start:build"
+  },
+  "dependencies": {
+    "@nestjs/common": "^9.2.0",
+    "@nestjs/config": "^2.2.0",
+    "@nestjs/core": "^9.2.0",
+    "@nestjs/platform-express": "^9.2.0",
+    "body-parser": "^1.20.1",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "config": "^3.3.8",
+    "cookie-parser": "^1.4.6",
+    "helmet": "^6.0.0",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.5.7"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^9.1.5",
+    "@nestjs/schematics": "^9.0.3",
+    "@types/body-parser": "^1.19.2",
+    "@types/config": "^3.3.0",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.11.9",
+    "@types/nodemon": "^1.19.2",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "lerna": "^6.0.3",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1",
+    "ts-loader": "^9.4.1",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "4.1.0",
+    "typescript": "^4.8.4"
+  }
+}
