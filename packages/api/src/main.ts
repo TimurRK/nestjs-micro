@@ -1,14 +1,15 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 
+import { IAppSettings } from '@shared/types';
+import { cors_options_delegate } from '@shared/cors';
+
 import helmet from 'helmet';
 import { json, urlencoded } from 'body-parser';
 import cookieParser from 'cookie-parser';
 import config from 'config';
 
 import { AppModule } from './app.module';
-
-import { IAppSettings } from '@shared/types';
 
 const APP_SETTINGS = config.get<IAppSettings>('APP_SETTINGS');
 
@@ -27,7 +28,7 @@ async function bootstrap() {
   );
   app.use(cookieParser());
 
-  // app.enableCors(cors_options_delegate);
+  app.enableCors(cors_options_delegate);
   app.use(
     helmet({
       contentSecurityPolicy: false,

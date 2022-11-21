@@ -1,0 +1,18 @@
+export interface IAppSettings {
+  readonly port: number;
+  readonly body_limit: string;
+  readonly body_parameter_limit: number;
+}
+
+export interface ILogSettings {
+  readonly level: string;
+  readonly silence: string[];
+}
+
+export interface ICorsSettings {
+  readonly allowed_origins: string[];
+  readonly allowed_paths: string[];
+  readonly allowed_methods: string[];
+  readonly allowed_credentials: boolean;
+  readonly allowed_headers: string[];
+}

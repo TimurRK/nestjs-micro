@@ -17,5 +17,11 @@
     ],
     "allowed_credentials": false,
     "allowed_headers": []
+  },
+  "LOGGER_SETTINGS": {
+    "level": "info",
+    "silence": [
+      "healthz"
+    ]
   }
 }
