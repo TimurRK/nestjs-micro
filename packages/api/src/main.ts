@@ -24,7 +24,7 @@ async function bootstrap() {
       limit: APP_SETTINGS.body_limit,
       extended: true,
       parameterLimit: APP_SETTINGS.body_parameter_limit,
-    })
+    }),
   );
   app.use(cookieParser());
 
@@ -32,13 +32,13 @@ async function bootstrap() {
   app.use(
     helmet({
       contentSecurityPolicy: false,
-    })
+    }),
   );
 
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
-    })
+    }),
   );
 
   await app.listen(APP_SETTINGS.port);

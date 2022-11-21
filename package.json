@@ -9,6 +9,9 @@
     "packages/*"
   ],
   "scripts": {
+    "format": "prettier --write \"packages/**/*.ts\"",
+    "lint": "eslint \"{packages,src,apps,libs}/**/*.ts\"",
+    "lint-fix": "npm run lint -- --fix",
     "graph": "nx graph",
     "build:api": "lerna exec --scope api -- npm run build",
     "start:api": "lerna exec --scope api -- npm run start:dev",

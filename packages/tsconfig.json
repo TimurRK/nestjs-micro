@@ -20,10 +20,5 @@
     "paths": {
       "@shared/*": ["./shared/*"]
     }
-  },
-  "references": [
-    {
-      "path": "./tsconfig.build.json"
-    },
-  ],
+  }
 }

@@ -15,11 +15,15 @@ export class LoggerMiddleware implements NestMiddleware {
 
   constructor(private readonly logger: LoggerService) {
     if (process.env.COMMIT_SHORT_SHA) {
-      this.logger.warn('BUILD_INFO', { commit_short_sha: process.env.COMMIT_SHORT_SHA });
+      this.logger.warn('BUILD_INFO', {
+        commit_short_sha: process.env.COMMIT_SHORT_SHA,
+      });
     }
 
     if (process.env.PIPELINE_CREATED_AT) {
-      this.logger.warn('BUILD_INFO', { pipeline_created_at: process.env.PIPELINE_CREATED_AT });
+      this.logger.warn('BUILD_INFO', {
+        pipeline_created_at: process.env.PIPELINE_CREATED_AT,
+      });
     }
   }
 
@@ -38,11 +42,15 @@ export class LoggerMiddleware implements NestMiddleware {
     }
 
     req.on('error', (error: Error) => {
-      logger_store.error(error.message, error.stack, { statusCode: req.statusCode });
+      logger_store.error(error.message, error.stack, {
+        statusCode: req.statusCode,
+      });
     });
 
     res.on('error', (error: Error) => {
-      logger_store.error(error.message, error.stack, { statusCode: req.statusCode });
+      logger_store.error(error.message, error.stack, {
+        statusCode: req.statusCode,
+      });
     });
 
     res.on('finish', () => {
@@ -59,13 +67,25 @@ export class LoggerMiddleware implements NestMiddleware {
       };
 
       if (res.statusCode < 200) {
-        logger_store.log(message, { statusCode: res.statusCode, statusMessage: res.statusMessage });
+        logger_store.log(message, {
+          statusCode: res.statusCode,
+          statusMessage: res.statusMessage,
+        });
       } else if (res.statusCode < 300) {
-        logger_store.info(message, { statusCode: res.statusCode, statusMessage: res.statusMessage });
+        logger_store.info(message, {
+          statusCode: res.statusCode,
+          statusMessage: res.statusMessage,
+        });
       } else if (res.statusCode < 400) {
-        logger_store.warn(message, { statusCode: res.statusCode, statusMessage: res.statusMessage });
+        logger_store.warn(message, {
+          statusCode: res.statusCode,
+          statusMessage: res.statusMessage,
+        });
       } else {
-        logger_store.error(message, '', { statusCode: res.statusCode, statusMessage: res.statusMessage });
+        logger_store.error(message, '', {
+          statusCode: res.statusCode,
+          statusMessage: res.statusMessage,
+        });
       }
     });
 
