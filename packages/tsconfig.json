@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "CommonJS",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "skipLibCheck": true,
     "declaration": true,
     "removeComments": true,
@@ -15,10 +15,10 @@
     "sourceMap": true,
     "baseUrl": "./",
     "typeRoots": [
-      "node_modules/@types",
+      "../node_modules/@types",
     ],
     "paths": {
       "@shared/*": ["./shared/*"]
-    }
+    },
   }
 }
