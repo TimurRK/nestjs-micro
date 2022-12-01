@@ -4,6 +4,15 @@ export interface IAppSettings {
   readonly body_parameter_limit: number;
 }
 
+export interface IAppMicroserviceSettings {
+  readonly port: number;
+  readonly host: string;
+}
+
+export interface IMicroserviceSettings extends IAppMicroserviceSettings {
+  readonly name: string;
+}
+
 export interface ILogSettings {
   readonly level: string;
   readonly silence: string[];

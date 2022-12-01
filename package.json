@@ -13,14 +13,18 @@
     "lint": "eslint \"{packages,src,apps,libs}/**/*.ts\"",
     "lint-fix": "npm run lint -- --fix",
     "graph": "nx graph",
-    "build:api": "lerna exec --scope api -- npm run build",
-    "start:api": "lerna exec --scope api -- npm run start:dev",
-    "start:api:build": "lerna exec --scope api -- npm run start:build"
+    "api:start": "lerna exec --scope api -- npm run start:dev",
+    "api:build": "lerna exec --scope api -- npm run build",
+    "api:start:build": "lerna exec --scope api -- npm run start:build",
+    "calc:start": "lerna exec --scope calc -- npm run start:dev",
+    "calc:build": "lerna exec --scope calc -- npm run build",
+    "calc:start:build": "lerna exec --scope calc -- npm run start:build"
   },
   "dependencies": {
     "@nestjs/common": "^9.2.0",
     "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.2.0",
+    "@nestjs/microservices": "^9.2.1",
     "@nestjs/platform-express": "^9.2.0",
     "body-parser": "^1.20.1",
     "class-transformer": "^0.5.1",

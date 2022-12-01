@@ -6,7 +6,7 @@
   },
   "CALC_MICROSERVICE_SETTINGS": {
     "port": 8081,
-    "host": "127.0.0.1",
+    "host": "calc",
     "name": "CALC_MICROSERVICE"
   },
   "CORS_SETTINGS": {

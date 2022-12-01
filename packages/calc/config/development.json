@@ -1,0 +1,12 @@
+{
+  "APP_SETTINGS": {
+    "port": 8081,
+    "host": "127.0.0.1"
+  },
+  "LOGGER_SETTINGS": {
+    "level": "info",
+    "silence": [
+      "healthz"
+    ]
+  }
+}
