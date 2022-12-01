@@ -1,0 +1,55 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "v1 api",
+      "cwd": "${workspaceFolder}/packages/api",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ts-node",
+      "args": [
+        "${workspaceFolder}/packages/api/src/main.ts",
+        "--runInBand",
+        "--no-cache",
+      ],
+      "runtimeArgs": [
+        "--files",
+        "-r",
+        "${workspaceFolder}/node_modules/tsconfig-paths/register"
+      ],
+      "env": {
+        "NODE_ENV": "development",
+        "TS_NODE_PROJECT": "${workspaceFolder}/packages/tsconfig.json"
+      },
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "v2 api",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/lerna",
+      "args": [
+        "${workspaceFolder}/packages/api/src/main.ts",
+        "--runInBand",
+        "--no-cache",
+      ],
+      "runtimeArgs": [
+        "exec",
+        "--scope",
+        "api",
+        "--",
+        "${workspaceFolder}/node_modules/.bin/ts-node",
+        "--files",
+        "-r",
+        "${workspaceFolder}/node_modules/tsconfig-paths/register"
+      ],
+      "env": {
+        "NODE_ENV": "development",
+        "TS_NODE_PROJECT": "${workspaceFolder}/packages/tsconfig.json"
+      },
+    },
+  ]
+}
