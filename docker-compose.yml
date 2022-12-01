@@ -1,0 +1,24 @@
+version: '3'
+services:
+  api:
+    build:
+      dockerfile: ./packages/api/Dockerfile
+      context: .
+      args:
+        - env=development
+    ports:
+      - '8080:80'
+      # - '8081:80'
+    # links:
+    #   - db
+    # depends_on:
+    #   - db
+    networks:
+      - nestjs_micro_network
+    container_name: nestjs_micro-api
+    # volumes:
+    #   - ./uploads:/server/uploads
+
+networks:
+  nestjs_micro_network:
+    external: false

@@ -42,3 +42,15 @@ or
 ```bash
 lerna add ${package_name} --dev --scope ${scope_name}
 ```
+
+## Run
+
+### Docker
+
+```bash
+sudo docker network create nestjs_micro_network
+```
+
+```bash
+sudo docker-compose up --build
+```
